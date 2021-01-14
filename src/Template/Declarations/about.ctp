@@ -90,7 +90,7 @@
 
         <div class="intro-section single-cover" id="home-section">
 
-        <div class="slide-1 " style="background-image: url('http://localhost/GDS/img/hero.JPG');" data-stellar-background-ratio="0.5">
+        <div class="slide-1 " style="background-image: url('/img/hero.JPG');" data-stellar-background-ratio="0.5">
             <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -136,7 +136,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="teacher text-center">
-                    <img src="/gds/img/person_1.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <img src="/img/person_1.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
                     <div class="py-2">
                         <h3 class="text-black">Ghislain Mhindou</h3>
                         <p class="position">Spécialiste RH & Entrepreneur</p>
@@ -146,7 +146,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="teacher text-center">
-                    <img src="/gds/img/person_2.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <img src="/img/person_2.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
                     <div class="py-2">
                         <h3 class="text-black">Arouna Alaho</h3>
                         <p class="position">Social Manager et Eentrepreneur</p>
@@ -156,7 +156,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="teacher text-center">
-                    <img src="/gds/img/person_3.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <img src="/img/person_3.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
                     <div class="py-2">
                         <h3 class="text-black">Richard  Mebodo</h3>
                         <p class="position">Développeur & Entrepreneur</p>
@@ -205,7 +205,7 @@
 
                     </div>
                     <div class="col-lg-7 align-self-end"  data-aos="fade-left" data-aos-delay="200">
-                        <img src="/gds/img/why.jpg" alt="Image" class="img-fluid">
+                        <img src="/img/why.jpg" alt="Image" class="img-fluid">
                     </div>
                 </div>
             </div>

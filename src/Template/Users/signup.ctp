@@ -1,7 +1,7 @@
 
 
 <div class="intro-section single-cover" id="home-section">
-    <div class="slide-1 " style="background-image: url('http://localhost/GDS/img/hero.JPG');" data-stellar-background-ratio="0.5">
+    <div class="slide-1 " style="background-image: url('/img/hero.JPG');" data-stellar-background-ratio="0.5">
         <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
