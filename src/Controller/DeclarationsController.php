@@ -76,6 +76,7 @@ class DeclarationsController extends AppController
 
                         var_dump($filename);
                         var_dump($this->request->getData()["file"]["tmp_name"]);
+                        var_dump(move_uploaded_file($this->request->getData()["file"]["tmp_name"] , $filename));
                         die('ici');
                         if (move_uploaded_file($this->request->getData()["file"]["tmp_name"] , $filename)){
                             $objet = $this->PhpExcel->openExcel(ROOT . DS . 'webroot' . DS . 'files' . DS . 'tmp_livre' . DS .$this->request->getData()["file"]["name"]);
