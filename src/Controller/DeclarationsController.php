@@ -1470,7 +1470,7 @@ class DeclarationsController extends AppController
 
             $date = date('dmYHis');
             $filename = basename( ROOT . DS . 'webroot' . DS . 'files' . DS .'GDS-'.$date.'.xls');
-            $link = '/GDS/files/GDS-'.$date.'.xls';
+            $link = '/files/GDS-'.$date.'.xls';
 
             $objWriter = $this->PhpExcel->downloadFile($objet, $filename);
 
