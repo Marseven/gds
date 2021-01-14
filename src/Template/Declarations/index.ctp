@@ -19,11 +19,11 @@
 					</ul>
 				</div>
 			<?php else:?>
-                <?= $this->form->create('User', ['url' => ['controller' => 'Users','action' => 'login'], 'class' => 'form-box']); ?>
+                <?= $this->Form->create('User', ['url' => ['controller' => 'Users','action' => 'login'], 'class' => 'form-box']); ?>
 					<h3 class="h4 text-black mb-4">Connexion</h3>
 					<!--identifiant field-->
 					<div class="form-group">
-                        <?= $this->form->input('email', array(
+                        <?= $this->Form->input('email', array(
                             'class' => 'form-control white_bg',
                             'placeholder' => 'Email',
                             'type' => 'text',
@@ -33,7 +33,7 @@
 
 					<!--Password field-->
 					<div class="form-group">
-                        <?= $this->form->input('password', array(
+                        <?= $this->Form->input('password', array(
                             'class' => 'form-control white_bg',
                             'placeholder' => 'Mot de passe',
                             'type' => 'password',
@@ -41,7 +41,7 @@
                         )); ?>
 					</div>
 
-					<?= $this->form->input('Connexion', array(
+					<?= $this->Form->input('Connexion', array(
                         'class' => 'btn btn-primary',
                         'id'    => 'connexion',
                         'type'  => 'submit',
@@ -50,7 +50,7 @@
                     <br/><br/>
 
 					<div class="panel-footer" id="Panel_register_center">Mot de passe oublié ? <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'remember']) ?>"><strong >Cliquez-ici</strong ></a></div>
-                <?= $this->form->end(); ?>
+                <?= $this->Form->end(); ?>
 			<?php endif;?>
 
 		</div>
