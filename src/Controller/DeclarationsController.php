@@ -632,15 +632,19 @@ class DeclarationsController extends AppController
             $oneTable = TableRegistry::get('One_imports');
             $twoTable = TableRegistry::get('Two_imports');
             $treeTable = TableRegistry::get('Tree_imports');
-            $onedatas = $oneTable->find()->all();
-            $twodatas = $twoTable->find()->all();
-            $treedatas = $treeTable->find()->all();
+            $sql ="TRUNCATE one_imports";
+            $result = $connection->execute($sql);
 
-            if($onedatas->first() && $twodatas->first() && $treedatas->first())
-            {
-                $this->Flash->error('Vous avez déjà assaini les trois livres de paie !');
-                $this->redirect(['action' => 'genererDts']);
-            }else{
+            $sql ="TRUNCATE two_imports";
+            $result = $connection->execute($sql);
+
+            $sql ="TRUNCATE tree_imports";
+            $result = $connection->execute($sql);
+
+            $sql ="TRUNCATE final_datas";
+            $result = $connection->execute($sql);
+
+
                 /////////////////////////////////////////// Assainir fichier 1
                 $data1Table = TableRegistry::get('data1_imports');
                 $data1 = $data1Table->find()->all();
@@ -723,7 +727,7 @@ class DeclarationsController extends AppController
                 $this->Flash->success('Les livres sont prêts pour l\'export du DTS !');
                 $this->redirect(['action' => 'listeDts']);
 
-            }
+
         }
     }
 
