@@ -94,6 +94,7 @@ class AppController extends Controller
         while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
         {
             $count++;
+            var_dump($emapData[0]);die;
             if($emapData[0] == 'Matricule'){
                 $result = false;
             }else{
