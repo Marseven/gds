@@ -173,6 +173,8 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import2']);
+                        }elseif($typeof == 'xlsx'){
+                            $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
@@ -356,6 +358,8 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import3']);
+                        }elseif($typeof == 'xlsx'){
+                            $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
@@ -542,6 +546,8 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'assainir']);
+                        }elseif($typeof == 'xlsx'){
+                            $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
