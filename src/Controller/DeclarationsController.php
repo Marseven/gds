@@ -136,7 +136,8 @@ class DeclarationsController extends AppController
                         $prenom = '';
                         $matricule = '';
                         $typeof = $this->typefile($file);
-                        if($typeof == true){
+                        debug($typeof);
+                        if($typeof === true){
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
@@ -173,7 +174,7 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import2']);
-                        }elseif($typeof == 'xlsx'){
+                        }elseif($typeof === 'xlsx'){
                             $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
@@ -316,12 +317,12 @@ class DeclarationsController extends AppController
                         $prenom = '';
                         $matricule = '';
                         $typeof = $this->typefile($file);
-                        if(($typeof == true) && ($data1->first()->Import_1_4 == NULL))
+                        if((($typeof === true) && ($data1->first()->Import_1_4 == NULL)) || (($typeof === true) && ($data1->first()->Import_1_8 == NULL)))
                         {
                             $this->Flash->error('Impoter le même type de livre de paie que 1er mois !');
                             return $this->redirect(['action' => 'import2']);
                         }
-                        if($typeof == true){
+                        if($typeof === true){
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
@@ -358,7 +359,7 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import3']);
-                        }elseif($typeof == 'xlsx'){
+                        }elseif($typeof === 'xlsx'){
                             $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
@@ -504,12 +505,12 @@ class DeclarationsController extends AppController
                         $prenom = '';
                         $matricule = '';
                         $typeof = $this->typefile($file);
-                        if(($typeof == true) && ($data2->first()->Import_2_4 == NULL) && ($data1->first()->Import_1_4 == NULL))
+                        if((($typeof == true) && ($data2->first()->Import_2_4 == NULL) && ($data1->first()->Import_1_4 == NULL)) || (($typeof === true) && ($data2->first()->Import_2_8 == NULL) && ($data1->first()->Import_1_8 == NULL)))
                         {
                             $this->Flash->error('Impoter le même type de livre de paie que 1er et 2eme mois !');
                             return $this->redirect(['action' => 'import3']);
                         }
-                        if($typeof == true){
+                        if($typeof === true){
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
@@ -546,7 +547,7 @@ class DeclarationsController extends AppController
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'assainir']);
-                        }elseif($typeof == 'xlsx'){
+                        }elseif($typeof === 'xlsx'){
                             $this->Flash->error('Un problème est survenu : Veuillez Convertir ce fichier en .xlsx avant de l\'importer ');
                         }else{
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
