@@ -111,4 +111,4 @@ Router::scope('/', function (RouteBuilder $routes) {
  * how to customize the loading of plugin routes.
  */
 Plugin::loaded();
-Application::addPlugin();
+//Application::addPlugin('');
