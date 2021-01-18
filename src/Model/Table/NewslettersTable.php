@@ -20,9 +20,9 @@ class NewslettersTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('newsletters');
-        $this->displayField('email');
-        $this->primaryKey('id_email');
+        $this->setTable('newsletters');
+        $this->setDisplayField('email');
+        $this->setPrimaryKey('id_email');
 
     }
 
