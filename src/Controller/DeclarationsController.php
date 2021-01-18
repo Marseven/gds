@@ -136,7 +136,6 @@ class DeclarationsController extends AppController
                         $prenom = '';
                         $matricule = '';
                         $typeof = $this->typefile($file);
-                        debug($typeof);
                         if($typeof === true){
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
