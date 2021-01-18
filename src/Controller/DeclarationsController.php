@@ -141,7 +141,7 @@ class DeclarationsController extends AppController
                             {
 
                                 $count++;    // add this line
-                                debug($emapData);die;
+
                                 if($count>1)
                                 {
                                     // add this line

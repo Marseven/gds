@@ -96,7 +96,7 @@ class AppController extends Controller
             $count++;
             if($emapData[0] == 'Matricule'){
                 $result = false;
-            }elseif($emapData[0] == '="Matricule"'){
+            }elseif(!isset($emapData[7])){
                 $result = "xlsx";
             }else{
                 $result = true;
