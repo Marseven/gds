@@ -22,7 +22,6 @@ use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
 use Cake\Core\Plugin;
-
 /**
  * The default class to use for all routes
  *
@@ -108,4 +107,4 @@ Router::scope('/', function (RouteBuilder $routes) {
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
-Application::addPlugin();
+Plugin::loaded();
