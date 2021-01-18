@@ -103,6 +103,7 @@ class AppController extends Controller
             }
             break;
         }
+        debug($result);die;
         return $result;
     }
 
