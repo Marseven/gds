@@ -742,8 +742,7 @@ class DeclarationsController extends AppController
             $finalTable = TableRegistry::get('final_datas');
             $configsTable = TableRegistry::get('configs');
             $config = $configsTable->find()->where(['id_user =' => $user['id']])->first();
-            debug($config);die;
-            if($config){
+            if($config == null){
                 $this->Flash->error('Veuillez configurer les informations de votre entreprise !');
                 return $this->redirect(['Controller' => 'Configs', 'action' => 'index']);
             }
