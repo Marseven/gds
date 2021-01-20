@@ -744,7 +744,7 @@ class DeclarationsController extends AppController
             $config = $configsTable->find()->where(['id_user =' => $user['id']])->first();
             if($config == null){
                 $this->Flash->error('Veuillez configurer les informations de votre entreprise !');
-                return $this->redirect(['Controller' => 'Configs', 'action' => 'index']);
+                return $this->redirect(['controller' => 'Configs', 'action' => 'index']);
             }
             $datas = $finalTable->find()->all();
             if(!$datas->first())
