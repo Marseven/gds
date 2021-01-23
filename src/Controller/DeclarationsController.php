@@ -81,7 +81,7 @@ class DeclarationsController extends AppController
 
                             while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() !== null)
                             {
-                                debug($objet->getActiveSheet()->getCell('A1')->getValue());die;
+                                debug($objet->getActiveSheet()->getCell('A1')->getValue() == '="Matricule"');die;
 
                                 if($objet->getActiveSheet()->getCell('A1')->getValue() == '="Matricule"'){
                                     $nom = utf8_encode($this->cleanChart($objet->getActiveSheet()->getCell('B'.$nbre)->getValue()));
