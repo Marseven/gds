@@ -289,28 +289,55 @@ class DeclarationsController extends AppController
                             while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() !== null)
                             {
 
-                                $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
-                                $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
-                                $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
-                                $brut = 0;
-                                $nbrejour = 0;
-                                do {
-                                    if($matricule ==  $objet->getActiveSheet()->getCell('A'.$nbre)->getValue())
-                                    {
-                                        if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "BRUT"){
-                                            $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                if($objet->getActiveSheet()->getCell('A1')->getValue() == '="Matricule"'){
+                                    $nom = utf8_encode($this->cleanChart($objet->getActiveSheet()->getCell('B'.$nbre)->getValue()));
+                                    $prenom = utf8_encode($this->cleanChart($objet->getActiveSheet()->getCell('C'.$nbre)->getValue()));
+                                    $matricule = $this->cleanChart($objet->getActiveSheet()->getCell('A'.$nbre)->getValue());
+                                    $brut = 0;
+                                    $nbrejour = 0;
+                                    do {
+                                        if($matricule ==  $this->cleanChart($objet->getActiveSheet()->getCell('A'.$nbre)->getValue()))
+                                        {
+                                            if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "BRUT"){
+                                                $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
+                                            if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "TOTALHTRAV"){
+                                                $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
                                         }
 
-                                        if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "TOTALHTRAV"){
-                                            $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                        $nbre++;
+                                        $nbre2 = $nbre+1;
+
+                                    } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
+
+                                }else{
+                                    $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
+                                    $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
+                                    $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
+                                    $brut = 0;
+                                    $nbrejour = 0;
+                                    do {
+                                        if($matricule ==  $objet->getActiveSheet()->getCell('A'.$nbre)->getValue())
+                                        {
+                                            if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "BRUT"){
+                                                $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
+                                            if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "TOTALHTRAV"){
+                                                $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
                                         }
 
-                                    }
+                                        $nbre++;
+                                        $nbre2 = $nbre+1;
 
-                                    $nbre++;
-                                    $nbre2 = $nbre+1;
+                                    } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
-                                } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
+                                }
 
                                 $data = $data2Table->newEntity();
                                 $data->Import_2_1 = $matricule;
@@ -477,28 +504,55 @@ class DeclarationsController extends AppController
                             while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() !== null)
                             {
 
-                                $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
-                                $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
-                                $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
-                                $brut = 0;
-                                $nbrejour = 0;
-                                do {
-                                    if($matricule ==  $objet->getActiveSheet()->getCell('A'.$nbre)->getValue())
-                                    {
-                                        if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "BRUT"){
-                                            $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                if($objet->getActiveSheet()->getCell('A1')->getValue() == '="Matricule"'){
+                                    $nom = utf8_encode($this->cleanChart($objet->getActiveSheet()->getCell('B'.$nbre)->getValue()));
+                                    $prenom = utf8_encode($this->cleanChart($objet->getActiveSheet()->getCell('C'.$nbre)->getValue()));
+                                    $matricule = $this->cleanChart($objet->getActiveSheet()->getCell('A'.$nbre)->getValue());
+                                    $brut = 0;
+                                    $nbrejour = 0;
+                                    do {
+                                        if($matricule ==  $this->cleanChart($objet->getActiveSheet()->getCell('A'.$nbre)->getValue()))
+                                        {
+                                            if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "BRUT"){
+                                                $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
+                                            if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "TOTALHTRAV"){
+                                                $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
                                         }
 
-                                        if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "TOTALHTRAV"){
-                                            $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                        $nbre++;
+                                        $nbre2 = $nbre+1;
+
+                                    } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
+
+                                }else{
+                                    $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
+                                    $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
+                                    $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
+                                    $brut = 0;
+                                    $nbrejour = 0;
+                                    do {
+                                        if($matricule ==  $objet->getActiveSheet()->getCell('A'.$nbre)->getValue())
+                                        {
+                                            if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "BRUT"){
+                                                $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
+                                            if($objet->getActiveSheet()->getCell('D'.$nbre)->getValue() == "TOTALHTRAV"){
+                                                $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                            }
+
                                         }
 
-                                    }
+                                        $nbre++;
+                                        $nbre2 = $nbre+1;
 
-                                    $nbre++;
-                                    $nbre2 = $nbre+1;
+                                    } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
-                                } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
+                                }
 
                                 $data = $data3Table->newEntity();
                                 $data->Import_3_1 = $matricule;
