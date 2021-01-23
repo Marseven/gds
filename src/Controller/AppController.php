@@ -111,7 +111,7 @@ class AppController extends Controller
         substr($chaine, 0, -1);
         substr($chaine, 2);
         $chaine = trim($chaine);
-
+        debug($chaine); die;
         return $chaine;
     }
 
