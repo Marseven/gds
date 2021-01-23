@@ -103,8 +103,16 @@ class AppController extends Controller
             }
             break;
         }
-        //debug($result);die;
+
         return $result;
+    }
+
+    public function cleanChart($chaine){
+        substr($chaine, 0, -1);
+        substr($chaine, 2);
+        $chaine = trim($chaine);
+
+        return $chaine;
     }
 
     public function typeLivre($nomOrigine){
