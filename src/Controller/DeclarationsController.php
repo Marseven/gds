@@ -206,6 +206,7 @@ class DeclarationsController extends AppController
 
                                 $count++;    // add this line
 
+                                debug($typeof);
                                 debug($emapData);die;
 
                                 if($typeof === "Sage"){
