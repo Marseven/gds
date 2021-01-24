@@ -93,10 +93,12 @@ class DeclarationsController extends AppController
                                         {
                                             if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "BRUT"){
                                                 $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                                debug($brut);
                                             }
 
                                             if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "TOTALHTRAV"){
                                                 $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
+                                                debug($nbrejour);
                                             }
 
                                         }
@@ -105,7 +107,7 @@ class DeclarationsController extends AppController
                                         $nbre2 = $nbre+1;
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
-
+                                    die;
                                 }else{
                                     $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
                                     $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
