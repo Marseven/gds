@@ -205,13 +205,17 @@ class DeclarationsController extends AppController
 
                                 $count++;    // add this line
 
+                                if($emapData[0] == '="Matricule"'){
+                                    $sage = true;
+                                }
+
                                 if($count==2)
                                 {
-                                    $matricule = $emapData[0];
+                                   if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                 }
                                 if($count>1)
                                 {
-                                    if($matricule ==  $emapData[0])
+                                    if($matricule ==  $emapData[0] && !$sage)
                                     {
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
@@ -221,6 +225,14 @@ class DeclarationsController extends AppController
                                             $prenom = utf8_encode($emapData[2]);
                                         }
 
+                                    }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
+                                        if($this->cleanChart($emapData[3]) == "BRUT"){
+                                            $brut = $emapData[5];
+                                        }elseif($this->cleanChart($emapData[3]) == "TOTALHTRAV"){
+                                            $nbrejour = $emapData[5];
+                                            $nom = utf8_encode($this->cleanChart($emapData[1]));
+                                            $prenom = utf8_encode($this->cleanChart($emapData[2]));
+                                        }
                                     }else{
                                         // add this line
                                         $data = $data1Table->newEntity();
@@ -415,13 +427,17 @@ class DeclarationsController extends AppController
 
                                 $count++;    // add this line
 
+                                if($emapData[0] == '="Matricule"'){
+                                    $sage = true;
+                                }
+
                                 if($count==2)
                                 {
-                                    $matricule = $emapData[0];
+                                   if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                 }
                                 if($count>1)
                                 {
-                                    if($matricule ==  $emapData[0])
+                                    if($matricule ==  $emapData[0] && !$sage)
                                     {
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
@@ -431,6 +447,14 @@ class DeclarationsController extends AppController
                                             $prenom = utf8_encode($emapData[2]);
                                         }
 
+                                    }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
+                                        if($this->cleanChart($emapData[3]) == "BRUT"){
+                                            $brut = $emapData[5];
+                                        }elseif($this->cleanChart($emapData[3]) == "TOTALHTRAV"){
+                                            $nbrejour = $emapData[5];
+                                            $nom = utf8_encode($this->cleanChart($emapData[1]));
+                                            $prenom = utf8_encode($this->cleanChart($emapData[2]));
+                                        }
                                     }else{
                                         // add this line
                                         $data = $data2Table->newEntity();
@@ -623,18 +647,23 @@ class DeclarationsController extends AppController
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'assainir']);
                         }else{
+                            $sage = false;
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
                                 $count++;    // add this line
 
+                                if($emapData[0] == '="Matricule"'){
+                                    $sage = true;
+                                }
+
                                 if($count==2)
                                 {
-                                    $matricule = $emapData[0];
+                                   if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                 }
                                 if($count>1)
                                 {
-                                    if($matricule ==  $emapData[0])
+                                    if($matricule ==  $emapData[0] && !$sage)
                                     {
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
@@ -644,6 +673,14 @@ class DeclarationsController extends AppController
                                             $prenom = utf8_encode($emapData[2]);
                                         }
 
+                                    }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
+                                        if($this->cleanChart($emapData[3]) == "BRUT"){
+                                            $brut = $emapData[5];
+                                        }elseif($this->cleanChart($emapData[3]) == "TOTALHTRAV"){
+                                            $nbrejour = $emapData[5];
+                                            $nom = utf8_encode($this->cleanChart($emapData[1]));
+                                            $prenom = utf8_encode($this->cleanChart($emapData[2]));
+                                        }
                                     }else{
                                         // add this line
                                         $data = $data3Table->newEntity();
