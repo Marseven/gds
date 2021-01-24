@@ -93,12 +93,10 @@ class DeclarationsController extends AppController
                                         {
                                             if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "BRUT"){
                                                 $brut = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
-                                                debug($brut);
                                             }
 
                                             if($this->cleanChart($objet->getActiveSheet()->getCell('D'.$nbre)->getValue()) == "TOTALHTRAV"){
                                                 $nbrejour = $objet->getActiveSheet()->getCell('F'.$nbre)->getValue();
-                                                debug($nbrejour);
                                             }
 
                                         }
