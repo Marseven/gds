@@ -208,7 +208,7 @@ class DeclarationsController extends AppController
 
                                 debug($emapData);die;
 
-                                if($emapData[0] == '="Matricule"'){
+                                if($typeof === "Sage"){
                                     $sage = true;
                                 }
 
@@ -431,7 +431,7 @@ class DeclarationsController extends AppController
 
                                 $count++;    // add this line
 
-                                if($emapData[0] == '="Matricule"'){
+                                if($typeof === "Sage"){
                                     $sage = true;
                                 }
 
@@ -657,7 +657,7 @@ class DeclarationsController extends AppController
 
                                 $count++;    // add this line
 
-                                if($emapData[0] == '="Matricule"'){
+                                if($typeof === "Sage"){
                                     $sage = true;
                                 }
 
