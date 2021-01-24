@@ -105,7 +105,6 @@ class DeclarationsController extends AppController
                                         $nbre2 = $nbre+1;
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
-                                    die;
                                 }else{
                                     $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
                                     $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
