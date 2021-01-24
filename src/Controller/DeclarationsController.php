@@ -606,7 +606,7 @@ class DeclarationsController extends AppController
                         $prenom = '';
                         $matricule = '';
                         $typeof = $this->typefile($file);
-                        if((($typeof == true) && ($data1->first()->Import_1_8 == NULL)) || (($typeof === true) && ($data2->first()->Import_2_8 == NULL)))
+                        if((($typeof === true) && ($data1->first()->Import_1_8 == NULL)) || (($typeof === true) && ($data2->first()->Import_2_8 == NULL)))
                         {
                             $this->Flash->error('Impoter le même type de livre de paie que 1er et 2eme mois !');
                             return $this->redirect(['action' => 'import3']);
