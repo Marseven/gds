@@ -200,10 +200,13 @@ class DeclarationsController extends AppController
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import2']);
                         }else{
+                            $sage = false;
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
                                 $count++;    // add this line
+
+                                debug($emapData);die;
 
                                 if($emapData[0] == '="Matricule"'){
                                     $sage = true;
@@ -422,6 +425,7 @@ class DeclarationsController extends AppController
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import3']);
                         }else{
+                            $sage = false;
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
