@@ -218,15 +218,9 @@ class DeclarationsController extends AppController
                                 }
                                 if($count>1)
                                 {
-                                    debug($matricule ==  $emapData[0] && !$sage);
-                                    debug($matricule ==  $this->cleanChart($emapData[0]) && $sage);
-                                    debug($matricule);
-                                    debug($emapData);
 
                                     if($matricule ==  $emapData[0] && !$sage)
                                     {
-                                        echo 'simple';
-                                        debug($emapData);
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
                                         }elseif($emapData[3] == "TOTALHTRAV"){
@@ -236,8 +230,6 @@ class DeclarationsController extends AppController
                                         }
 
                                     }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
-                                        echo 'complexe';
-
                                         if($this->cleanChart($emapData[3]) == "BRUT"){
                                             $brut = $emapData[5];
                                             debug($brut);
@@ -260,7 +252,7 @@ class DeclarationsController extends AppController
                                         $nbrejour = 0;
                                         $nom = '';
                                         $prenom = '';
-                                        $matricule = $emapData[0];
+                                        if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                     }
                                 }
                             }
@@ -484,7 +476,7 @@ class DeclarationsController extends AppController
                                         $nbrejour = 0;
                                         $nom = '';
                                         $prenom = '';
-                                        $matricule = $emapData[0];
+                                        if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                     }
                                 }
                             }
@@ -710,7 +702,7 @@ class DeclarationsController extends AppController
                                         $nbrejour = 0;
                                         $nom = '';
                                         $prenom = '';
-                                        $matricule = $emapData[0];
+                                        if($sage){$matricule = $this->cleanChart($emapData[0]);}else{$matricule = $emapData[0];}
                                     }
                                 }
                             }
