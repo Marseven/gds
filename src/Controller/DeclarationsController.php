@@ -222,7 +222,6 @@ class DeclarationsController extends AppController
                                     {
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
-                                            settype($brut, "integer");
                                         }elseif($emapData[3] == "TOTALHTRAV"){
                                             $nbrejour = $emapData[5];
                                             $nom = utf8_encode($emapData[1]);
@@ -232,6 +231,7 @@ class DeclarationsController extends AppController
                                     }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
                                         if($this->cleanChart($emapData[3]) == "BRUT"){
                                             $brut = $emapData[5];
+                                            settype($brut, "integer");
                                         }elseif($this->cleanChart($emapData[3]) == "TOTALHTRAV"){
                                             $nbrejour = $emapData[5];
                                             $nom = utf8_encode($this->cleanChart($emapData[1]));
