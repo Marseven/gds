@@ -220,6 +220,8 @@ class DeclarationsController extends AppController
                                 {
                                     debug($matricule ==  $emapData[0] && !$sage);
                                     debug($matricule ==  $this->cleanChart($emapData[0]) && $sage);
+                                    debug($matricule);
+                                    debug($emapData);
 
                                     if($matricule ==  $emapData[0] && !$sage)
                                     {
@@ -235,7 +237,7 @@ class DeclarationsController extends AppController
 
                                     }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
                                         echo 'complexe';
-                                        debug($emapData);
+
                                         if($this->cleanChart($emapData[3]) == "BRUT"){
                                             $brut = $emapData[5];
                                             debug($brut);
@@ -259,12 +261,6 @@ class DeclarationsController extends AppController
                                         $nom = '';
                                         $prenom = '';
                                         $matricule = $emapData[0];
-                                        if($typeof === "Sage"){
-                                            $sage = true;
-                                            debug($sage);
-                                        }else{
-                                            $sage = false;
-                                        }
                                     }
                                 }
                             }
