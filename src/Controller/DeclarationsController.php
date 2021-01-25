@@ -1593,6 +1593,7 @@ class DeclarationsController extends AppController
             );
 
             $cotisation_total = $cotisation_net + $cotisation_cnamgs;
+            settype($cotisation_total, "integer");
             $sheet->setCellValue('O'.$nbre, $cotisation_total);
             $sheet->getStyle('O'.$nbre)->applyFromArray(array(
                 'fill' => array(
