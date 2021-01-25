@@ -259,6 +259,12 @@ class DeclarationsController extends AppController
                                         $nom = '';
                                         $prenom = '';
                                         $matricule = $emapData[0];
+                                        if($typeof === "Sage"){
+                                            $sage = true;
+                                            debug($sage);
+                                        }else{
+                                            $sage = false;
+                                        }
                                     }
                                 }
                             }
