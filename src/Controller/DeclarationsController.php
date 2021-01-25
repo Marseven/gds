@@ -218,12 +218,17 @@ class DeclarationsController extends AppController
                                 }
                                 if($count>1)
                                 {
+                                    debug($matricule ==  $emapData[0] && !$sage);
+                                    debug($matricule ==  $this->cleanChart($emapData[0]) && $sage);
+
+                                    die;
+
                                     if($matricule ==  $emapData[0] && !$sage)
                                     {
                                         echo 'simple';
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
-                                            debug($data);
+                                            debug($brut);
                                         }elseif($emapData[3] == "TOTALHTRAV"){
                                             $nbrejour = $emapData[5];
                                             $nom = utf8_encode($emapData[1]);
