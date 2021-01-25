@@ -200,15 +200,17 @@ class DeclarationsController extends AppController
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
                             $this->redirect(['action' => 'import2']);
                         }else{
-                            $sage = false;
+
+                            if($typeof === "Sage"){
+                                $sage = true;
+                                debug($sage);
+                            }else{
+                                $sage = false;
+                            }
                             while (($emapData = fgetcsv($file, 10000, ";")) !== FALSE)
                             {
 
                                 $count++;    // add this line
-
-                                if($typeof === "Sage"){
-                                    $sage = true;
-                                }
 
                                 if($count==2)
                                 {
@@ -218,8 +220,10 @@ class DeclarationsController extends AppController
                                 {
                                     if($matricule ==  $emapData[0] && !$sage)
                                     {
+                                        echo 'simple';
                                         if($emapData[3] == "BRUT"){
                                             $brut = $emapData[5];
+                                            debug($data);
                                         }elseif($emapData[3] == "TOTALHTRAV"){
                                             $nbrejour = $emapData[5];
                                             $nom = utf8_encode($emapData[1]);
@@ -227,12 +231,15 @@ class DeclarationsController extends AppController
                                         }
 
                                     }elseif($matricule ==  $this->cleanChart($emapData[0]) && $sage){
+                                        echo 'complexe';
                                         if($this->cleanChart($emapData[3]) == "BRUT"){
                                             $brut = $emapData[5];
+                                            debug($brut);
                                         }elseif($this->cleanChart($emapData[3]) == "TOTALHTRAV"){
                                             $nbrejour = $emapData[5];
                                             $nom = utf8_encode($this->cleanChart($emapData[1]));
                                             $prenom = utf8_encode($this->cleanChart($emapData[2]));
+                                            debug($nbrejour);
                                         }
                                     }else{
                                         // add this line
@@ -242,6 +249,7 @@ class DeclarationsController extends AppController
                                         $data->Import_1_3 = $prenom;
                                         $data->Import_1_5 = $nbrejour;
                                         $data->Import_1_6 = $brut;
+                                        debug($data);
                                         $data1Table->save($data);
                                         $brut = 0;
                                         $nbrejour = 0;
@@ -251,6 +259,7 @@ class DeclarationsController extends AppController
                                     }
                                 }
                             }
+                            die;
                             fclose($file);
                             // echo 'CSV File has been successfully Imported';
                             $this->Flash->success('Le Livre de paie a été importé avec succès !');
