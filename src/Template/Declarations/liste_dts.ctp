@@ -155,7 +155,7 @@
                         </td>
                         <td class="v-align-middle">
                           <p>
-                            <a onclick="return confirm('Voulez-vous vraiment supprimer cet employé !');" href="<?= $this->Url->build(['controller' => 'Declaration', 'action' => 'delete', $final->Matricule_Employe_1_1]) ?>" class="btn btn-danger btn-cons"><i class="fa fa-trash"></i></a>
+                            <a onclick="return confirm('Voulez-vous vraiment supprimer cet employé !');" href="<?= $this->Url->build(['action' => 'listeDts', $final->Matricule_Employe_1_1]) ?>" class="btn btn-danger btn-cons"><i class="fa fa-trash"></i></a>
                           </p>
                         </td>
                       </tr>

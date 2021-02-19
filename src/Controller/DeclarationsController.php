@@ -1632,6 +1632,8 @@ class DeclarationsController extends AppController
         return $this->render('liste_dts', 'login');
     }
 
+    
+
     // Nettoyage de la BD pour la prochaine génération de DTS
     public function viderBd()
     {
