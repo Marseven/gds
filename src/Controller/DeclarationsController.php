@@ -1624,7 +1624,6 @@ class DeclarationsController extends AppController
             }else{
                 $finalTable->delete($final);
                 $this->Flash->set('L\'employé a été supprimé avec succès.', ['element' => 'success']);
-                $this->redirect(['action' => 'listeDts']);
             }
         }
         $finals = $finalTable->find()->all();
@@ -1632,7 +1631,7 @@ class DeclarationsController extends AppController
         return $this->render('liste_dts', 'login');
     }
 
-    
+
 
     // Nettoyage de la BD pour la prochaine génération de DTS
     public function viderBd()
