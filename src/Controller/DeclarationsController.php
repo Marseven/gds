@@ -170,6 +170,11 @@ class DeclarationsController extends AppController
 
                                 if($count>1)
                                 {
+                                    if(!isset($emapData[5])){
+                                        $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                        $this->redirect(['action' => 'import1']);
+                                        break;
+                                    }
                                     // add this line
                                     $data = $data1Table->newEntity();
                                     $data->Import_1_1 = $emapData[0];
@@ -396,6 +401,11 @@ class DeclarationsController extends AppController
 
                                 if($count>1)
                                 {
+                                    if(!isset($emapData[5])){
+                                        $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                        $this->redirect(['action' => 'import2']);
+                                        break;
+                                    }
                                     // add this line
                                     $data = $data2Table->newEntity();
                                     $data->Import_2_1 = $emapData[0];
@@ -623,6 +633,11 @@ class DeclarationsController extends AppController
 
                                 if($count>1)
                                 {
+                                    if(!isset($emapData[5])){
+                                        $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                        $this->redirect(['action' => 'import3']);
+                                        break;
+                                    }
                                     // add this line
                                     $data = $data3Table->newEntity();
                                     $data->Import_3_1 = $emapData[0];
