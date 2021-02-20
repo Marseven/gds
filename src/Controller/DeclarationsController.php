@@ -172,8 +172,8 @@ class DeclarationsController extends AppController
                                 {
                                     if(!isset($emapData[5])){
                                         $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
-                                        $this->redirect(['action' => 'import1']);
-                                        break;
+                                        return $this->redirect(['action' => 'import1']);
+                                        die;
                                     }
                                     // add this line
                                     $data = $data1Table->newEntity();
@@ -403,8 +403,8 @@ class DeclarationsController extends AppController
                                 {
                                     if(!isset($emapData[5])){
                                         $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
-                                        $this->redirect(['action' => 'import2']);
-                                        break;
+                                        return $this->redirect(['action' => 'import2']);
+                                        die;
                                     }
                                     // add this line
                                     $data = $data2Table->newEntity();
@@ -635,8 +635,8 @@ class DeclarationsController extends AppController
                                 {
                                     if(!isset($emapData[5])){
                                         $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
-                                        $this->redirect(['action' => 'import3']);
-                                        break;
+                                        return $this->redirect(['action' => 'import3']);
+                                        die;
                                     }
                                     // add this line
                                     $data = $data3Table->newEntity();
