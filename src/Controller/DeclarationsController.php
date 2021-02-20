@@ -105,7 +105,7 @@ class DeclarationsController extends AppController
                                         $nbre2 = $nbre+1;
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
-                                }else{
+                                }elseif($objet->getActiveSheet()->getCell('A1')->getValue() == 'Matricule'){
                                     $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
                                     $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
                                     $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
@@ -129,6 +129,10 @@ class DeclarationsController extends AppController
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
+                                }else{
+                                    $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                    return $this->redirect(['action' => 'import1']);
+                                    die;
                                 }
 
                                 $data = $data1Table->newEntity();
@@ -331,7 +335,7 @@ class DeclarationsController extends AppController
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
-                                }else{
+                                }elseif($objet->getActiveSheet()->getCell('A1')->getValue() == 'Matricule'){
                                     $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
                                     $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
                                     $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
@@ -355,6 +359,10 @@ class DeclarationsController extends AppController
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
+                                }else{
+                                    $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                    return $this->redirect(['action' => 'import2']);
+                                    die;
                                 }
 
                                 $data = $data2Table->newEntity();
@@ -563,7 +571,7 @@ class DeclarationsController extends AppController
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
-                                }else{
+                                }elseif($objet->getActiveSheet()->getCell('A1')->getValue() == 'Matricule'){
                                     $nom = utf8_encode($objet->getActiveSheet()->getCell('B'.$nbre)->getValue());
                                     $prenom = utf8_encode($objet->getActiveSheet()->getCell('C'.$nbre)->getValue());
                                     $matricule = $objet->getActiveSheet()->getCell('A'.$nbre)->getValue();
@@ -587,6 +595,10 @@ class DeclarationsController extends AppController
 
                                     } while ($objet->getActiveSheet()->getCell('A'.$nbre)->getValue() == $objet->getActiveSheet()->getCell('A'.$nbre2)->getValue());
 
+                                }else{
+                                    $this->Flash->error("Le Livre de paie n'est pas valide, veuillez vérifier que toutes colones sont présentes !");
+                                    return $this->redirect(['action' => 'import3']);
+                                    die;
                                 }
 
                                 $data = $data3Table->newEntity();
