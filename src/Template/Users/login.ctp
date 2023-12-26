@@ -3,7 +3,7 @@
 		<div class="col-lg-6 mb-4">
 			<h1  data-aos="fade-up" data-aos-delay="100">Gabon Declaration Soft</h1>
 			<p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Logiciel de Traitement des cotisations sociales CNSS et CNAMGS.</p>
-			<p data-aos="fade-up" data-aos-delay="300"><a href="<?= $this->Url->build(['controller' => 'Declaration', 'action' => 'import1']) ?>" class="btn btn-primary py-3 px-5 btn-pill"><i class="fa fa-file-export"></i> Générer une déclaration</a></p>
+			<p data-aos="fade-up" data-aos-delay="300"><a href="<?= $this->Url->build(['controller' => 'Declarations', 'action' => 'import1']) ?>" class="btn btn-primary py-3 px-5 btn-pill"><i class="fa fa-file-export"></i> Générer une déclaration</a></p>
 
 		</div>
 
